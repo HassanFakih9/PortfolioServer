@@ -32,7 +32,8 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage :storage});
 // ...
-const whitelist = ['https://portfolio-client-bx1rovhrr-hassan-fakihs-projects.vercel.app/','http://localhost:3000'];
+const whitelist = ['https://portfolio-client-bx1rovhrr-hassan-fakihs-projects.vercel.app/',
+'https://portfolio-client-azure.vercel.app/','http://localhost:3000'];
 
 const corsOptions = {
   origin: function (origin, callback) {
