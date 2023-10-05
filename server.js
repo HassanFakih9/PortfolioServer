@@ -32,7 +32,21 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage :storage});
 // ...
+const whitelist = ['https://portfolio-client-bx1rovhrr-hassan-fakihs-projects.vercel.app/','http://localhost:3000'];
 
+const corsOptions = {
+  origin: function (origin, callback) {
+    // Check if the request origin is in the whitelist or if it's not provided (e.g., same-origin requests)
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+};
+
+// Apply CORS middleware with options
+app.use(cors(corsOptions));
 
 
 const skillsRoutes = require('./routes/skills');
