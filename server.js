@@ -53,7 +53,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-// const uri = 'mongodb+srv://hassanfakih80:rK4ZnK0bwv8XzIaJ@cluster0.adyejpk.mongodb.net/?retryWrites=true&w=majority';
+
 const uri=process.env.Mongo_URL;
 mongoose.connect(uri, {
   useNewUrlParser: true,
