@@ -35,7 +35,7 @@ const storage = multer.diskStorage({
     cb(null, filename);
   },
 });
-db.users.dropIndex("email_1")
+
 const upload = multer({ storage :storage});
 // ...
 // const whitelist = ['https://portfolio-client-bx1rovhrr-hassan-fakihs-projects.vercel.app/',
