@@ -10,7 +10,13 @@ app.use(express.urlencoded({ extended: true }));
 const cors = require('cors');
 app.use(cors()); // Allow all origins for development; adjust for production
 // ...
+const corsOptions = {
+  origin: '*', // Replace with your frontend URL
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, // Enable passing cookies and other credentials
+};
 
+app.use(cors(corsOptions));
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
